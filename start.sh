@@ -1,2 +1,1 @@
-rvm use 2.3.0@saasapp
-sudo rails server -p 80 -d
+rails server -b 0.0.0.0
