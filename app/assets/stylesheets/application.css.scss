@@ -32,6 +32,10 @@ body {
 .navbar {
   border: none;
 }
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
 //Homepage border, remove white bar
 .home-callout {
   margin-top: -20px;
