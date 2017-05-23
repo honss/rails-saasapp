@@ -7,7 +7,7 @@ class BugsController < ApplicationController
     if @bug.save
       redirect_to new_bug_path, notice: 'Bug report sent.'
     else
-      redirect_to new_bug_path, notice: 'Bug report failed, please try again'
+      redirect_to new_bug_path, notice: 'Bug report failed, please make sure every field is filled out and valid'
     end
   end
   
