@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <h2 class="text-center">Bug Reports</h2>
+    <div class="col-md-4 col-md-offset-4">
+      <div class="well">
+        <%= form_for @bug do |f| %>
+
+          <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= f.label 'Description of Bug'%>
+          <%= f.text_area :description, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= f.submit 'Submit Bug', class: 'btn btn-default' %>
+          </div>
+
+        <% end %>
+        <%= flash[:notice] %>
+        <p>Please describe what you were doing before the bug occured, what exactly happened, and anything else you think would be useful to fix it.</p>
+      </div>
+    </div>
+  </div>
+</div>
