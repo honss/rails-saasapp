@@ -21,8 +21,11 @@
 
         <% end %>
        	<p>Please describe what you were doing before the bug occured, what exactly happened, and anything else you think would be useful to fix it.</p>
-        <%= flash[:notice] %>
+
       </div>
+      <% flash.each do |type, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+      <% end %>
     </div>
   </div>
 </div>

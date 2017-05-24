@@ -23,7 +23,9 @@
           <%= f.submit 'Submit', class: 'btn btn-default' %>
         <% end %>
       </div>
-      <%= flash[:notice] %>
+      <% flash.each do |type, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+      <% end %>
     </div>
   </div>
 </div>

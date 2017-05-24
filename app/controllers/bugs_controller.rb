@@ -5,9 +5,11 @@ class BugsController < ApplicationController
   def create
     @bug = Bug.new(bug_params)
     if @bug.save
-      redirect_to new_bug_path, notice: 'Bug report sent.'
+      flash[:success] = 'Bug report sent.'
+      redirect_to new_bug_path
     else
-      redirect_to new_bug_path, notice: 'Bug report failed, please make sure every field is filled out and valid'
+      flash[:danger] = @bug.errors.full_messages.join(", ")
+      redirect_to new_bug_path
     end
   end
   
