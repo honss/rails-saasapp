@@ -5,8 +5,8 @@ class BugsController < ApplicationController
   def create
     @bug = Bug.new(bug_params)
     if @bug.save
-      @title = params[:bug][:title]
-      @description = params[:bug][:description]
+      title = params[:bug][:title]
+      description = params[:bug][:description]
       BugMailer.bug_email(title, description).deliver
       flash[:success] = 'Bug report sent.'
       redirect_to new_bug_path
